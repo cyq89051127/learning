@@ -31,14 +31,14 @@ public class ScalarFunctionTest {
 
         DataStream<Row> stream = streamTableEnvironment.execEnv().addSource(flinkKafkaConsumerBase);
 
-        streamTableEnvironment.registerFunction("upper",new ToUpperCase());
+        streamTableEnvironment.registerFunction("upCase",new ToUpperCase());
 
         Table streamTable = streamTableEnvironment.fromDataStream(stream,"product_id,addr,price,rowtime.rowtime");
 
         streamTableEnvironment.registerTable("product",streamTable);
 
         streamTable.printSchema();
-        Table result = streamTableEnvironment.sqlQuery("select product_id,addr,upper(addr) as upperaddr,price from product");
+        Table result = streamTableEnvironment.sqlQuery("select product_id,addr,upCase(addr) as upperaddr,price from product");
 
         final TableSchema tableSchemaResult = new TableSchema(new String[]{"product_id","addr","upperaddr","price"},
                 new TypeInformation[]{Types.STRING, Types.STRING, Types.STRING, Types.LONG});

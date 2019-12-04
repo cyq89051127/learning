@@ -7,6 +7,7 @@
   <modules>
     <module>flink</module>
       <module>udf</module>
+      <module>janino</module>
   </modules>
   <properties>
     <scala.version>2.11.8</scala.version>

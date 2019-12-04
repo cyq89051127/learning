@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="udf" />
         <module name="flink" />
+        <module name="janino" />
       </profile>
     </annotationProcessing>
   </component>

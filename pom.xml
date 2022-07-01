@@ -12,7 +12,7 @@
   <properties>
     <scala.version>2.11.8</scala.version>
     <flink.version>1.8.0</flink.version>
-    <kafka.verion>0.10.0.1</kafka.verion>
+    <kafka.verion>0.10.2.2</kafka.verion>
     <reversion>0.1</reversion>
   </properties>
 
